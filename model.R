@@ -1,7 +1,7 @@
 setwd("C:/Users/Columbia/Desktop/yarisma/ilce_data")
 ilce_i <- read.csv("ilce_i.csv")
 
-#Data Preparation 
+#A few additional cleansing before model
 #regional price to reduce factor levels
      emlakendeksi <- aggregate((as.numeric(ilce_i$fiyat)), list(ilce_i$mahalle), mean)
      colnames(emlakendeksi) <- c("mahalleler", "ortalama_fiyat")
