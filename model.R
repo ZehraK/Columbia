@@ -1,7 +1,7 @@
 setwd("C:/Users/Columbia/Desktop/yarisma/ilce_data")
 ilce_i <- read.csv("ilce_i.csv")
 
-#Data Preparation
+#Data Preparation 
 #regional price to reduce factor levels
      emlakendeksi <- aggregate((as.numeric(ilce_i$fiyat)), list(ilce_i$mahalle), mean)
      colnames(emlakendeksi) <- c("mahalleler", "ortalama_fiyat")
@@ -15,7 +15,7 @@ ilce_i <- read.csv("ilce_i.csv")
       selected_features <- c("fiyat","ic_firin", "ic_giyinme_odasi", "ic_gomme_dolap", "ic_klima", "ic_mutfak_ankastre",
                        "ic_set_ustu_ocak","ic_vestiyer", "ic_camasir_odasi","dis_guvenlik",
                        "dis_otopark", "engelli_giris_rampa", "muhit_market", "muhit_ilkogretim",
-                       "cephe_puaný", "ulasim_e5", "ulasim_marmaray", "ulasim_tren_istasyonu",
+                       "cephe_puanÃ½", "ulasim_e5", "ulasim_marmaray", "ulasim_tren_istasyonu",
                        "manzara_bogaz", "manzara_deniz", "manzara_gol", "manzara_doga", "manzara_havuz", 
                        "mahalle", "manzara_sehir", "mahalle_ortalama_fiyat", "site_icerisinde", "banyo_sayisi",
                        "oda_sayisi", "isitma","bulundugu_kat",  "balkon", "kullanim_durumu",
