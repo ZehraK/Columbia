@@ -32,16 +32,16 @@
       #impute missing krediye_uygun data
       yimpute1 <- mice.impute.logreg(y1, ry1, x1)
       length(yimpute1)
-      histogram(yimpute1, xlab = "Eşyalı için İmputasyon Değerleri",
-                ylab="Eşyalı için İmputasyon Oranları(%)",
-                col=c("gray"), main = "Eşyalı İmputasyon Dağılımı")
+      histogram(yimpute1, xlab = "EÃ¾yalÃ½ iÃ§in Ãmputasyon DeÃ°erleri",
+                ylab="EÃ¾yalÃ½ iÃ§in Ãmputasyon OranlarÃ½(%)",
+                col=c("gray"), main = "EÃ¾yalÃ½ Ãmputasyon DaÃ°Ã½lÃ½mÃ½")
       #fill in the missings
       veri_i$esyali[is.na(veri_i$esyali)] <- yimpute1 
 
       #imputation krediye_uygun
       
       set.seed(30081996)
-      varname2 <- c('bina_yasi', 'ilce_ortalama_fiyat') #ortalama fiyat ile ilceye ilişkin bilgi de içermiş oldu
+      varname2 <- c('bina_yasi', 'ilce_ortalama_fiyat') #ortalama fiyat ile ilceye iliÃ¾kin bilgi de iÃ§ermiÃ¾ oldu
       r2 <- stats::complete.cases(veri_i[, veri_df$varname2])
       x2 <- veri_i [r2, veri_i$varname2]
       y2 <- veri_i[r2, 'krediye_uygun']
@@ -49,11 +49,11 @@
       table(ry2)
       #percentage of missing data 
       sum(!ry2)/length(ry2)
-      #imp öncesi grafik????
+      #imp Ã¶ncesi grafik????
       #impute missing krediye_uygun data
       yimpute2 <- mice.impute.logreg(y2, ry2, x2)
       length(yimpute2)
-      hist(yimpute2, xlab = 'Krediye Uygun İmputasyon Değerleri',ylab="Ev Sayısı",col="gray48",main="Krediye Uygun İmputasyonu")
+      hist(yimpute2, xlab = 'Krediye Uygun Ãmputasyon DeÃ°erleri',ylab="Ev SayÃ½sÃ½",col="gray48",main="Krediye Uygun Ãmputasyonu")
       #assign the imputation values 
       veri_i$krediye_uygun[is.na(veri_i$krediye_uygun)] <- yimpute2
       
@@ -77,7 +77,7 @@
       veri_i$site_icerisinde[is.na(veri_i$site_icerisinde)] <- yimpute3
       
       
-      #imputation balkon NMAR, factor olduğu için na'leri yeni bir seviye kabul edebiliriz.
+      #imputation balkon NMAR, factor olduÃ°u iÃ§in na'leri yeni bir seviye kabul edebiliriz.
       levels <- levels(veri_i$balkon)
       levels[length(levels) + 1] <- "bilinmiyor"
       veri_i$balkon <- factor(veri_i$balkon, levels = levels)
@@ -101,7 +101,7 @@
       #impute missing aidat 
       yimpute4 <- mice.impute.pmm(y,ry,x)
       length(yimpute4)
-      hist(yimpute4, xlab= 'Aidat İçin İmputasyon Değerleri',ylab="Ev Sayısı", main="Aidat İmputasyonu",col="mistyrose4")
+      hist(yimpute4, xlab= 'Aidat ÃÃ§in Ãmputasyon DeÃ°erleri',ylab="Ev SayÃ½sÃ½", main="Aidat Ãmputasyonu",col="mistyrose4")
       veri_i$aidat[is.na(veri_i$aidat)] <- yimpute4
       
       
