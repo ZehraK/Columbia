@@ -5,7 +5,8 @@
       veri_df <- veri_df[(veri_df$banyo_sayisi == "1" | veri_df$banyo_sayisi == "2" |veri_df$banyo_sayisi == "3" | veri_df$banyo_sayisi == "yok"),]
       levels(droplevels(veri_df$banyo_sayisi))
       veri_df$banyo_sayisi <- as.factor(as.character(veri_df$banyo_sayisi))
-
+       
+       #export datasets after this process as veri_i and veri_ii
        
 #imputation 1
       
@@ -100,10 +101,13 @@
       
       
 #imputation 2
-      veri_ii <- veri_ii[!is.na(veri_ii$esyali),]
-      veri_ii <- veri_ii[!is.na(veri_ii$site_icerisinde),]
-      veri_ii <- veri_ii[!is.na(veri_ii$krediye_uygun),]
-      veri_ii <- subset(veri_ii, select=-c(1,12,16))
+
+       #veri_ii
+
+        veri_ii <- veri_ii[!is.na(veri_ii$esyali),]
+        veri_ii <- veri_ii[!is.na(veri_ii$site_icerisinde),]
+        veri_ii <- veri_ii[!is.na(veri_ii$krediye_uygun),]
+        veri_ii <- subset(veri_ii, select=-c(1,12,16))
 
 
 
