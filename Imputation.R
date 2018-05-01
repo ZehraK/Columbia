@@ -61,7 +61,6 @@
       y3 <- veri_i[r3, 'site_icerisinde']
       ry3 <- !is.na(y3)
       table(ry3)
-      
       #percentage of missing data 
       sum(!ry3)/length(ry3)
       #impute missing site_icerisinde data
