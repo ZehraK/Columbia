@@ -1,9 +1,4 @@
-#Data cleansing
-    
-      veri_df <- veri_df[!is.na(veri_df$fiyat),] 
-      #use log_fiyat only for data cleansing to clean the extreme values since 
-      veri_df$log_fiyat <- log(veri_df$fiyat) 
-      veri_df <- veri_df[veri_df$log_fiyat<1,]
+#Standart imputation for the whole data set
       
       veri_df <- veri_df[!is.na(veri_df$m_kare),]
       
