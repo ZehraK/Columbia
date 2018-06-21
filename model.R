@@ -1,4 +1,4 @@
-setwd("C:/Users/Columbia/Desktop/yarisma/ilce_data")
+setwd("directory")
 ilce_i <- read.csv("ilce_i.csv")
 
 #A few additional cleansing before model
